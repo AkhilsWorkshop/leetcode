@@ -1,9 +1,16 @@
-const nums = [1, 2, 3, 4, 5]
-
-var containsDuplicate = function (nums) {
-    const set = new Set([...nums]);
-    return set.size != nums.length;
-};
 
 
-console.log(containsDuplicate(nums))
+const powerOfTwo = (n) => {
+
+    if (n === 1) {
+        return true
+    } else if (n % 2) {
+        return false
+    } else
+        return true
+
+}
+
+console.log(powerOfTwo(5))
+
+// O(1)
