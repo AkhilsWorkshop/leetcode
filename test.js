@@ -1,16 +1,31 @@
 
+const stock = (nums) => {
 
-const powerOfTwo = (n) => {
+    let left = 0
+    let right = 1
+    let profit = 0
+    let current
 
-    if (n === 1) {
-        return true
-    } else if (n % 2) {
-        return false
-    } else
-        return true
+    while (right < nums.length) {
+
+        if (nums[left] > nums[right]) {
+            left = right
+        }
+
+        current = nums[right] - nums[left]
+
+        if (current > profit) {
+            profit = current
+        }
+
+        right++
+
+    }
+
+    return profit
 
 }
 
-console.log(powerOfTwo(5))
+const prices = [7, 6, 4, 3, 1]
 
-// O(1)
+console.log(stock(prices))
